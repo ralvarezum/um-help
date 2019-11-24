@@ -1,0 +1,32 @@
+{% extends 'estructura.html' %}
+{% block contenido %}
+    <div>Opciones</div>
+    <div>
+        <span><a href="crear">Crear una persona</a><br></span>
+    </div>
+    <h3>Personas</h3>
+    <table>
+        <thead>
+            <td>Num</td>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Creado</td>
+            <td>Activo</td>
+            <td>Detalles</td>
+        </thead>
+        <tbody>
+        {% for persona in personas %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ persona.id }}</td>
+                <td>{{ persona.nombre }}</td>
+                <td>{{ persona.apellido }}</td>
+                <td>{{ persona.creado }}</td>
+                <td>{{ persona.activo }}</td>
+                <td><a href="detalle?id={{ persona.id }}">detalles</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'estructura.html' %}
+{% block contenido %}
+    <form method="POST" action="/automovil/crear" enctype='multipart/form-data'>
+      Marca: <input type="text" name="marca"><br>
+      Modelo: <input type="text" name="modelo"><br>
+      Personas: <select name="personas" multiple>
+        {% for persona in personas %}
+            <option value="{{ persona.id }}">{{ persona.apellido }}, {{ persona.nombre }}</option>
+        {% endfor %}
+
+    </select>
+      <input type="submit" value="Agregar">
+    </form>
+{% endblock %}

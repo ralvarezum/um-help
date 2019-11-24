@@ -1,0 +1,30 @@
+{% extends 'estructura.html' %}
+{% block contenido %}
+    <div>Opciones</div>
+    <div>
+        <span><a href="crear">Crear un automovil</a><br></span>
+    </div>
+    <h3>Automoviles</h3>
+    <table>
+        <thead>
+            <td>Num</td>
+            <td>ID</td>
+            <td>Modelo</td>
+            <td>Marca</td>
+            <td>Creado</td>
+            <td>Activo</td>
+        </thead>
+        <tbody>
+        {% for automovil in automoviles %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ automovil.id }}</td>
+                <td>{{ automovil.marca }}</td>
+                <td>{{ automovil.modelo }}</td>
+                <td>{{ automovil.creado }}</td>
+                <td>{{ automovil.activo }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

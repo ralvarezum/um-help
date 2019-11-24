@@ -1,0 +1,43 @@
+{% extends 'estructura.html' %}
+{% block contenido %}
+    <div>Opciones</div>
+    <div>
+        <span><a href="crear">Crear una persona</a><br></span>
+    </div>
+    <h3>Detalle de la Persona</h3>
+    <table>
+        <tbody>
+            <tr>
+                <td>ID</td><td>{{ persona.id }}</td>
+            </tr>
+            <tr>
+                <td>Nombre</td><td>{{ persona.nombre }}</td>
+            </tr>
+            <tr>
+                <td>Apellido</td><td>{{ persona.apellido }}</td>
+            </tr>
+            <tr>
+                <td>Creado</td><td>{{ persona.creado }}</td>
+            </tr>
+            <tr>
+                <td>Activo</td><td>{{ persona.activo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Detalle de los Vehiculos</h2>
+    <table>
+        <tbody>
+        {% for vehiculo in persona.automoviles %}
+            <tr>
+                <td>ID</td><td>{{ vehiculo.id }}</td>
+                <td>Marca</td><td>{{ vehiculo.marca }}</td>
+                <td>Modelo</td><td>{{ vehiculo.modelo }}</td>
+                <td>Creado</td><td>{{ vehiculo.creado }}</td>
+                <td>Activo</td><td>{{ vehiculo.activo }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
